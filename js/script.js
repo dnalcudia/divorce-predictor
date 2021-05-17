@@ -1437,7 +1437,7 @@ async function loadModel() {
   model.add(tf.layers.dense({ units: 10, activation: 'relu' }));
   model.add(tf.layers.dense({ units: 1, activation: 'sigmoid' }));
 
-  model.compile({ loss: 'categoricalCrossentropy', optimizer: 'adam' });
+  model.compile({ loss: 'binaryCrossentropy', optimizer: 'adam' });
 
   await model.fitDataset(convertedData, {
     epochs: 30,
